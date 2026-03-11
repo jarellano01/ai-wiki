@@ -127,6 +127,23 @@ opts = {
 
 Toggle it off anytime with `Space t b`.
 
+### Show hidden files in Telescope file finder
+
+By default, Telescope's `find_files` picker hides dotfiles (`.github/`, `.gitignore`, `.env.example`, etc.). To show them, add a `pickers` block to the `telescope.setup` call in `~/.config/nvim/init.lua`:
+
+```lua
+require('telescope').setup {
+  pickers = {
+    find_files = {
+      hidden = true,
+    },
+  },
+  extensions = {
+    ['ui-select'] = { require('telescope.themes').get_dropdown() },
+  },
+}
+```
+
 ### Key Neovim Git Shortcuts
 
 | Shortcut | Action |
